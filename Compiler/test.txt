@@ -1,0 +1,17 @@
+/*
+	hello worldddd
+*/
+#include <stdio.h>
+// hello world
+int main()
+{
+  printf("hello world\n");  // hello world
+  return 0;
+	/*
+		hello world
+	*/
+	// lala
+}
+// lalalala
+/*lala*/
+// lala

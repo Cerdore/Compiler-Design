@@ -1,0 +1,6 @@
+入口地址	变量名
+0			include
+1			stdio
+2			h
+3			main
+4			printf

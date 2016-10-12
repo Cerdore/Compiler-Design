@@ -1,0 +1,21 @@
+@
+ID@include
+<@<
+ID@stdio
+ID@
+ID@h
+>@>
+INT@int
+ID@main
+(@(
+)@)
+{@{
+ID@printf
+(@(
+STRING@"hello world"
+)@)
+;@;
+RETURN@return
+DIGIT@0
+;@;
+}@}
