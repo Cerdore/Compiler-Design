@@ -1,8 +1,10 @@
 package Lexical;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -429,6 +431,7 @@ public class Lexial {
 			else if(word != "" || type != "")
 				table.add(new tuple(line, word, type));
 		}// for
+		saveFile();
 		return;
 	}// analysis
 	
@@ -454,7 +457,31 @@ public class Lexial {
 			tp.print();
 		}
 	}
-
+	
+	/**
+	 * 将符号表存放到文件中
+	 */
+	public void saveFile()
+	{
+		File writeFile = new File(".\\token.txt");
+		try {
+			writeFile.createNewFile();
+			BufferedWriter out = new BufferedWriter(new FileWriter(writeFile));
+			Iterator it = table.iterator();
+			tuple tp = null;
+			while(it.hasNext())
+			{
+				tp = (tuple)it.next();
+				out.write(tp.tokenName+"@"+ tp.tokenType + "\r\n");
+			}
+			out.flush();
+			out.close();
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+	}
 	public static void main(String[] args) throws IOException {
 		Lexial lx = new Lexial();
 		String code = lx.scan("test.txt");
