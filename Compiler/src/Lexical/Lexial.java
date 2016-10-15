@@ -32,7 +32,7 @@ public class Lexial {
 		}
 		public void print()
 		{
-			System.out.println(" "+ lineNum + "\t" + tokenName + "\t" + tokenType);
+			System.out.println(" "+ lineNum + "\t\t" + tokenName + "\t\t\t" + tokenType);
 		}
 	}
 	public boolean normal(char ch)
@@ -171,12 +171,12 @@ public class Lexial {
 			if(Character.isAlphabetic(ch) || ch == '_') // _letter(letter | digit)
 			{
 				while(Character.isAlphabetic(ch) || Character.isDigit(ch) ||
-						ch == '_' || !normal(ch))
+						ch == '_')
 				{
 					word += ch;
 					ch = code.charAt(++i);
 				}
-				
+				i--;
 				for(int j = 0; j < word.length(); j++)
 				{
 					if(!normal(word.charAt(j)))
@@ -189,8 +189,10 @@ public class Lexial {
 				
 				for(int j = 0; j < key.length; j++)
 				{
-					if(word == key[j])
+					//System.out.println(word + " "+ key[j]);
+					if(word.equals(key[j]))
 					{
+						//System.out.println("**** " + word + " " + key[j] + " ****");
 						type = key[j].toUpperCase();
 						break;
 					}
@@ -216,7 +218,7 @@ public class Lexial {
 					}
 					ch = code.charAt(++i);
 				}
-				
+				 
 				if(state == 1)
 				{
 					type = "#-2"; // 错误代码，字符串格式错误
@@ -316,6 +318,7 @@ public class Lexial {
 					type = ">";
 					i--;
 				}
+				//System.out.println(word + " " + type);
 			}else if(ch == '!'){
 				word += ch;
 				ch = code.charAt(++i);
@@ -408,7 +411,7 @@ public class Lexial {
 			}else if(ch == '\n'){
 				type = "#-1";
 			}// else if
-			
+			//System.out.println(word + " " + type);
 			if(type == "#-1")
 				line++;
 			else if(type == "#-2")

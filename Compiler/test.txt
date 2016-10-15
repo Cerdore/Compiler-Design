@@ -1,17 +1,14 @@
-/*
-	hello worldddd
-*/
 #include <stdio.h>
-// hello world
+
 int main()
 {
   printf("hello world\n");  // hello world
+  int i = 5;
+  if(i > 0)
+  {
+  	break;
+  }else
+  	continue;
   return 0;
-	/*
-		hello world
-	*/
-	// lala
+
 }
-// lalalala
-/*lala*/
-// lala
