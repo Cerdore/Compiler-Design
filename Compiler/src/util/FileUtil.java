@@ -63,11 +63,12 @@ public class FileUtil {
 		}
 		return myTokenList;
 	}
-	
+	/*
 	public static void main(String[] args) {
 		List<String> t = FileUtil.getTokenFromFile();
 		String s = null;
 		for(int i = 0; i < t.size(); i++)
 			System.out.println(t.get(i));
 	}
+	*/
 }
